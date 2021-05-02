@@ -8,7 +8,7 @@ Project ini dibuat untuk kepentingan tugas akhir mata kuliah Pemrograman Web Inf
 
 ## Kebutuhan Aplikasi
 
-Repository System Requirement, Desain Database, Pembagian PIC  **[Klik disini](hhttps://drive.google.com/drive/folders/1U91d-owUiNxtQr45g5J4R9XwKedB1s_x?usp=sharing)**
+Repository System Requirement, Desain Database, Pembagian PIC  **[Klik disini](https://drive.google.com/drive/folders/1U91d-owUiNxtQr45g5J4R9XwKedB1s_x?usp=sharing)**
 
 ## Hal-hal yang perlu diinstall
 - **[XAMPP](https://www.apachefriends.org/download.html)**
