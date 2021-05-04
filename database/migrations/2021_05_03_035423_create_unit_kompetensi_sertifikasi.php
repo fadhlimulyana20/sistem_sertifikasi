@@ -14,7 +14,7 @@ class UnitKompetensiSertifikasi extends Migration
     public function up()
     {
         Schema::create('unit_kompetensi_sertifikasi', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
 
             $table->timestamps();
 

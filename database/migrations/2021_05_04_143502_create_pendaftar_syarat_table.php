@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RefJenisSertifikasi extends Migration
+class CreatePendaftarSyaratTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class RefJenisSertifikasi extends Migration
      */
     public function up()
     {
-        Schema::create('ref_jenis_sertifikasi', function (Blueprint $table) {
+        Schema::create('pendaftar_syarat', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            $table->string('nama');
-            $table->string('keterangan');
-            $table->boolean('status_jenis_sertifikasi')->nullable();
-            $table->boolean('is_aktif')->nullable();
+            $table->boolean('status_verifikasi_syarat');
+            $table->string('path_bukti');
+            $table->boolean('verifikasi_asesor');
+            $table->string('komentar_asesor');
         });
     }
 
@@ -31,6 +30,6 @@ class RefJenisSertifikasi extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_jenis_sertifikasi');
+        Schema::dropIfExists('pendaftar_syarat');
     }
 }
