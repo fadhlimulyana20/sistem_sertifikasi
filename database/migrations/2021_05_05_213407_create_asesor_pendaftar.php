@@ -16,6 +16,9 @@ class CreateAsesorPendaftar extends Migration
         Schema::create('asesor_pendaftar', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('id_asesor_jenis_sertifikasi');
+            $table->unsignedBigInteger('id_pendaftar');
+            $table->enum('hasil_ujian', [0, 1]);
         });
     }
 
