@@ -19,9 +19,6 @@ class CreatePendaftarKuesioner extends Migration
             $table->unsignedBigInteger('id_pendaftar');
             $table->unsignedBigInteger('id_kuesioner');
             $table->text('jawaban');
-            $table->string('created_by');
-            $table->date('created_at');
-            $table->string('edited_by');
         });
     }
 
