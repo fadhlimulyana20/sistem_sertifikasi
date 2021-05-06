@@ -25,9 +25,7 @@ class CreateAsesiTable extends Migration
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->boolean('jenis_kelamin');
-            $table->date('tanggal_lahir');
             $table->string('alamat');
-            $table->date('tanggal_lahir');
             $table->string('no_telepon');
             $table->string('email');
             $table->string('kualifikasi_pendidikan');
