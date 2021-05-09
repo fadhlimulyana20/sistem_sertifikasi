@@ -1,5 +1,16 @@
 <h3 align="center">Project Sistem Sertifikasi</h3>
 
+## Anggota Kelompok
+
+1. Ferdian Wijatmiko (M0519038)
+2. Fery Adwarsyah Pawamatra (M0519039)
+3. Fina Enno Rizki Oktavia Putri (M0519040)
+4. Indah Paksi Larasati (M0519049)
+5. Irfan Rafi Rizaldi (M0519051)
+6. Joy Kristian Eldo (M0519052)
+7. Muhammad Dwi Arfian (M0519060)
+8. Muhammad Fadhli Putra Mulyana (M0519061)
+
 ## Tentang Sistem Sertifikasi
 
 Sistem sertifikasi adalah aplikasi yang digunakan untuk mengelola penyelenggaraan ujian sertifikasi. Pendaftar atau bisa disebut dengan asesi dapat mendaftarkan dirinya untuk mengikuti ujian sertifikasi. Kemudian asesor atau penguji dalan sertifikasi dapat memberikan penilaian terhadap asesi, apakah dia layak untuk tersertifikasi atau tidak.
