@@ -14,8 +14,8 @@ class AlterPendaftarTableMenambahkanRelasiKePenawaranSertifikasiDanRelasiKeAsesi
     public function up()
     {
         Schema::table('pendaftar', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_penawaran_sertifikasi');
-            $table->unsignedBigInteger('id_asesi');
+            $table->unsignedBigInteger('id_penawaran_sertifikasi')->nullable();
+            $table->unsignedBigInteger('id_asesi')->nullable();
 
 
             $table->foreign('id_penawaran_sertifikasi')->references('id')->on('penawaran_sertifikasi')->onDelete('cascade');
