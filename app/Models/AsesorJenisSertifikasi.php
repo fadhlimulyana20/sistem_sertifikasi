@@ -11,9 +11,9 @@ class AsesorJenisSertifikasi extends Model
 
     protected $table = 'asesor_jenis_sertifikasi';
 
-    protected $fillable = {
+    protected $fillable = [
         'tanggal_awal_berlaku',
         'tanggal_akhir_berlaku',
         'no_sertifikat',
-    }
+    ];
 }

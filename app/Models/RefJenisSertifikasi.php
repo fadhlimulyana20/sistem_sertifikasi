@@ -17,4 +17,15 @@ class RefJenisSertifikasi extends Model
         'status_jenis_sertifikasi',
         'is_aktif'
     ];
+
+    // public function unitKompetensi(){
+    //     return $this->belongsToMany(RefUnitKompetensi::class, 'unit_kompetensi_sertifikasi', 'id_ref_jenis_sertifikasi', 'id_ref_kompetensi')->using(UnitKompetensiSertifikasi::class);
+    // }
+
+    // public function syarat(){
+    //     return $this->hasMany(SyaratSertifikasi::class, 'id_ref_jenis_sertifikasi');
+    // }
+    // public function asesorJenisSertifikai(){
+    //     return $this->hasMany(AsesorJenisSertifikai::class);
+    // }
 }
