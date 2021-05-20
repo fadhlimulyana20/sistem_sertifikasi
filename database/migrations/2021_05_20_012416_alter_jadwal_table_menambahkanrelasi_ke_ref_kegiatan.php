@@ -26,7 +26,7 @@ class AlterJadwalTableMenambahkanrelasiKeRefKegiatan extends Migration
     public function down()
     {
         Schema::table('jadwal', function (Blueprint $table) {
-            $table->foreign('id_kegiatan')->references('id')->on('ref_kegiatan')->onDelete('cascade');
+            $table->dropForeign('jadwal_id_kegiatan');
         });
     }
 }

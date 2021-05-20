@@ -14,8 +14,6 @@ class AlterSyaratSertifikasiTableMenambahkanRelasiKeRefJenisSertifikasi extends 
     public function up()
     {
         Schema::table('syarat_sertifikasi', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_ref_jenis_sertifikasi');
-
             $table->foreign('id_ref_jenis_sertifikasi')->references('id')->on('ref_jenis_sertifikasi')->onDelete('cascade');
         });
     }
