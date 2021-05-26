@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\PendaftarController;
+use App\Models\Jadwal;
+use App\Models\Pendaftar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +25,19 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+Route::prefix('pendaftar')->name('pendaftar.')->group(function () {
+    Route::get('/', [PendaftarController::class, 'index'])->name('index');
+    Route::get('/create', [PendaftarController::class, 'create'])->name('create');
+});
+
+Route::prefix('jadwal')->name('jadwal.')->group(function () {
+    Route::get('/', [JadwalController::class, 'index'])->name('index');
+    Route::get('/create', [JadwalController::class, 'create'])->name('create');
+    Route::post('/store', [JadwalController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [JadwalController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [JadwalController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [JadwalController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [JadwalController::class, 'show'])->name('show');
+});
