@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\PenawaranSertifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Models\Jadwal;
+use App\Models\PenawaranSertifikasi;
 use App\Models\Pendaftar;
 use Illuminate\Support\Facades\Route;
 
@@ -40,4 +42,14 @@ Route::prefix('jadwal')->name('jadwal.')->group(function () {
     Route::put('/update/{id}', [JadwalController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [JadwalController::class, 'destroy'])->name('destroy');
     Route::get('/detail/{id}', [JadwalController::class, 'show'])->name('show');
+});
+
+Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(function () {
+    Route::get('/', [PenawaranSertifikasiController::class, 'index'])->name('index');
+    Route::get('/create', [PenawaranSertifikasiController::class, 'create'])->name('create');
+    Route::post('/store', [PenawaranSertifikasiController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [PenawaranSertifikasiController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [PenawaranSertifikasiController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [PenawaranSertifikasiController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [PenawaranSertifikasiController::class, 'show'])->name('show');
 });
