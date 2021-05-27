@@ -18,8 +18,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama</th>
+                    <th scope=>#</th>
+                    <th scope=>Nama</th>
+                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
