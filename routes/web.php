@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PendaftarController;
+use App\Http\Controllers\AsesorController;
 use App\Models\Jadwal;
 use App\Models\Pendaftar;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +41,14 @@ Route::prefix('jadwal')->name('jadwal.')->group(function () {
     Route::put('/update/{id}', [JadwalController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [JadwalController::class, 'destroy'])->name('destroy');
     Route::get('/detail/{id}', [JadwalController::class, 'show'])->name('show');
+});
+
+Route::prefix('asesor')->name('asesor.')->group(function (){
+    Route::get('/', [AsesorController::class, 'index'])->name('index');
+    Route::get('/create', [AsesorController::class, 'create'])->name('create');
+    Route::post('/store', [AsesorController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [AsesorController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [AsesorController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [AsesorController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [AsesorController::class, 'show'])->name('show');
 });
