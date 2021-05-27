@@ -4,6 +4,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PenawaranSertifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\AsesorController;
+use App\Http\Controllers\RefKegiatanController;
 use App\Models\Jadwal;
 use App\Models\PenawaranSertifikasi;
 use App\Models\Pendaftar;
@@ -64,4 +65,14 @@ Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(fu
     Route::put('/update/{id}', [PenawaranSertifikasiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [PenawaranSertifikasiController::class, 'destroy'])->name('destroy');
     Route::get('/detail/{id}', [PenawaranSertifikasiController::class, 'show'])->name('show');
+});
+
+Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function(){
+    Route::get('/', [RefKegiatanController::class, 'index'])->name('index');
+    Route::get('/create', [RefKegiatanController::class, 'create'])->name('create');
+    Route::post('/store', [RefKegiatanController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [RefKegiatanController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [RefKegiatanController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [RefKegiatanController::class, 'index'])->name('destroy');
+    Route::get('/detail/{id}', [RefKegiatanController::class, 'detail'])->name('show');
 });
