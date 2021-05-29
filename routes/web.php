@@ -39,7 +39,7 @@ Route::prefix('pendaftar')->name('pendaftar.')->group(function () {
     Route::get('/create', [PendaftarController::class, 'create'])->name('create');
 });
 
-Route::prefix('jadwal')->name('jadwal.')->group(function () {
+Route::prefix('jadwal')->name('jadwal.')->middleware('auth')->group(function () {
     Route::get('/', [JadwalController::class, 'index'])->name('index');
     Route::get('/create', [JadwalController::class, 'create'])->name('create');
     Route::post('/store', [JadwalController::class, 'store'])->name('store');
@@ -49,7 +49,7 @@ Route::prefix('jadwal')->name('jadwal.')->group(function () {
     Route::get('/detail/{id}', [JadwalController::class, 'show'])->name('show');
 });
 
-Route::prefix('asesor')->name('asesor.')->group(function (){
+Route::prefix('asesor')->name('asesor.')->group(function () {
     Route::get('/', [AsesorController::class, 'index'])->name('index');
     Route::get('/create', [AsesorController::class, 'create'])->name('create');
     Route::post('/store', [AsesorController::class, 'store'])->name('store');
@@ -69,7 +69,7 @@ Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(fu
     Route::get('/detail/{id}', [PenawaranSertifikasiController::class, 'show'])->name('show');
 });
 
-Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function(){
+Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function () {
     Route::get('/', [RefKegiatanController::class, 'index'])->name('index');
     Route::get('/create', [RefKegiatanController::class, 'create'])->name('create');
     Route::post('/store', [RefKegiatanController::class, 'store'])->name('store');
@@ -79,7 +79,7 @@ Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function(){
     Route::get('/detail/{id}', [RefKegiatanController::class, 'detail'])->name('show');
 });
 
-Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function(){
+Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function () {
     Route::get('/', [SyaratSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [SyaratSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [SyaratSertifikasiController::class, 'store'])->name('store');
