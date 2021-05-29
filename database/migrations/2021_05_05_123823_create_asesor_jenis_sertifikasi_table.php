@@ -17,8 +17,6 @@ class CreateAsesorJenisSertifikasiTable extends Migration
         Schema::create('asesor_jenis_sertifikasi', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('id_asesor');
-            $table->unsignedBigInteger('id_ref_jenis_sertifikasi');
             $table->date('tanggal_awal_berlaku');
             $table->date('tanggal_akhir_berlaku');
             $table->string('no_sertifikat');

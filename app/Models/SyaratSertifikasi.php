@@ -14,6 +14,6 @@ class SyaratSertifikasi extends Model
     protected $fillable = [
         'id_ref_jenis_sertifikasi',
         'syarat',
-        'is_aktif'
-    ]
+        'is_aktif',
+    ];
 }

@@ -14,6 +14,9 @@ class AlterAsesorJenisSertifikasiTableMenambahkanRelasiKeIdAsesorDanRelasiKeIdRe
     public function up()
     {
         Schema::table('asesor_jenis_sertifikasi', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_asesor');
+            $table->unsignedBigInteger('id_ref_jenis_sertifikasi');
+            
             $table->foreign('id_asesor')->references('id')->on('asesor')->onDelete('cascade');
             $table->foreign('id_ref_jenis_sertifikasi')->references('id')->on('ref_jenis_sertifikasi')->onDelete('cascade');
         });
