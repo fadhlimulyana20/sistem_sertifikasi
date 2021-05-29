@@ -4,6 +4,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PenawaranSertifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\AsesorController;
+use App\Http\Controllers\RefJenisSertifikasiController;
 use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\SyaratSertifikasiController;
 use App\Http\Controllers\RefUnitKompetensiController;
@@ -97,4 +98,11 @@ Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->group(functi
     Route::put('/update/{id}', [RefUnitKompetensiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefUnitKompetensiController::class, 'destroy'])->name('destroy');
     Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
+});
+
+Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->group(function(){
+    Route::get('/', [RefJenisSertifikasiController::class, 'index'])->name('index');
+    Route::get('/create', [RefJenisSertifikasiController::class, 'create'])->name('create');
+    Route::post('/store', [RefJenisSertifikasiController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [RefJenisSertifikasiController::class, 'destroy'])->name('destroy');
 });
