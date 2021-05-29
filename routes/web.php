@@ -6,10 +6,12 @@ use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\AsesorController;
 use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\SyaratSertifikasiController;
+use App\Http\Controllers\RefUnitKompetensiController;
 use App\Models\Jadwal;
 use App\Models\PenawaranSertifikasi;
 use App\Models\Pendaftar;
 use App\Models\Asesor;
+use App\Models\RefUnitKompetensi;
 use App\Models\SyaratSertifikasi;
 use Illuminate\Support\Facades\Route;
 
@@ -86,4 +88,14 @@ Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function
     Route::get('/edit/{id}', [SyaratSertifikasiController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [SyaratSertifikasiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [SyaratSertifikasiController::class, 'destroy'])->name('destroy');
+});
+
+Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->group(function(){
+    Route::get('/', [RefUnitKompetensiController::class, 'index'])->name('index');
+    Route::get('/create', [RefUnitKompetensiController::class, 'create'])->name('create');
+    Route::post('/store', [RefUnitKompetensiController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [RefUnitKompetensiController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [RefUnitKompetensiController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [RefUnitKompetensiController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
 });
