@@ -6,6 +6,7 @@ use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\AsesorController;
 use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\SyaratSertifikasiController;
+use App\Http\Controllers\RefUnitKompetensiController;
 use App\Models\Jadwal;
 use App\Models\PenawaranSertifikasi;
 use App\Models\Pendaftar;
