@@ -4,9 +4,11 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PenawaranSertifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\AsesorController;
+use App\Http\Controllers\RefJenisSertifikasiController;
 use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\RefKuesionerController;
 use App\Http\Controllers\SyaratSertifikasiController;
+use App\Http\Controllers\RefUnitKompetensiController;
 use App\Models\Jadwal;
 use App\Models\PenawaranSertifikasi;
 use App\Models\Pendaftar;
@@ -40,7 +42,7 @@ Route::prefix('pendaftar')->name('pendaftar.')->group(function () {
     Route::get('/create', [PendaftarController::class, 'create'])->name('create');
 });
 
-Route::prefix('jadwal')->name('jadwal.')->group(function () {
+Route::prefix('jadwal')->name('jadwal.')->middleware('auth')->group(function () {
     Route::get('/', [JadwalController::class, 'index'])->name('index');
     Route::get('/create', [JadwalController::class, 'create'])->name('create');
     Route::post('/store', [JadwalController::class, 'store'])->name('store');
@@ -50,7 +52,7 @@ Route::prefix('jadwal')->name('jadwal.')->group(function () {
     Route::get('/detail/{id}', [JadwalController::class, 'show'])->name('show');
 });
 
-Route::prefix('asesor')->name('asesor.')->group(function (){
+Route::prefix('asesor')->name('asesor.')->group(function () {
     Route::get('/', [AsesorController::class, 'index'])->name('index');
     Route::get('/create', [AsesorController::class, 'create'])->name('create');
     Route::post('/store', [AsesorController::class, 'store'])->name('store');
@@ -70,7 +72,7 @@ Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(fu
     Route::get('/detail/{id}', [PenawaranSertifikasiController::class, 'show'])->name('show');
 });
 
-Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function(){
+Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function () {
     Route::get('/', [RefKegiatanController::class, 'index'])->name('index');
     Route::get('/create', [RefKegiatanController::class, 'create'])->name('create');
     Route::post('/store', [RefKegiatanController::class, 'store'])->name('store');
@@ -80,7 +82,7 @@ Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function(){
     Route::get('/detail/{id}', [RefKegiatanController::class, 'detail'])->name('show');
 });
 
-Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function(){
+Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function () {
     Route::get('/', [RefKuesionerController::class, 'index'])->name('index');
     Route::get('/create', [RefKuesionerController::class, 'create'])->name('create');
     Route::post('/store', [RefKuesionerController::class, 'store'])->name('store');
@@ -89,11 +91,28 @@ Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function(){
     Route::delete('/delete/{id}', [RefKuesionerController::class, 'index'])->name('destroy');
 });
 
-Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function(){
+Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function () {
     Route::get('/', [SyaratSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [SyaratSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [SyaratSertifikasiController::class, 'store'])->name('store');
     Route::get('/edit/{id}', [SyaratSertifikasiController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [SyaratSertifikasiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [SyaratSertifikasiController::class, 'destroy'])->name('destroy');
+});
+
+Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->group(function(){
+    Route::get('/', [RefUnitKompetensiController::class, 'index'])->name('index');
+    Route::get('/create', [RefUnitKompetensiController::class, 'create'])->name('create');
+    Route::post('/store', [RefUnitKompetensiController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [RefUnitKompetensiController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [RefUnitKompetensiController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [RefUnitKompetensiController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
+});
+
+Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->group(function(){
+    Route::get('/', [RefJenisSertifikasiController::class, 'index'])->name('index');
+    Route::get('/create', [RefJenisSertifikasiController::class, 'create'])->name('create');
+    Route::post('/store', [RefJenisSertifikasiController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [RefJenisSertifikasiController::class, 'destroy'])->name('destroy');
 });
