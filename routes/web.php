@@ -89,6 +89,7 @@ Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function () {
     Route::get('/edit/{id}', [RefKuesionerController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RefKuesionerController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefKuesionerController::class, 'index'])->name('destroy');
+    Route::get('/detail/{id}', [RefKuesionerController::class, 'detail'])->name('show');
 });
 
 Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function () {

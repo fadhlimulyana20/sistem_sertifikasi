@@ -39,7 +39,17 @@ class RefKuesionerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'pertanyaan' => 'required',
+        ]);
+
+        $ref_kuesioner = new RefKuesioner;
+        $ref_kuesioner->pertanyaan = $request->input('pertanyaan');
+        $ref_kuesioner->is_aktif = true;
+
+        $ref_kuesioner->save();
+
+        return redirect(route('ref_kuesioner.index'));
     }
 
     /**
@@ -50,7 +60,11 @@ class RefKuesionerController extends Controller
      */
     public function show($id)
     {
-        //
+        $ref_kuesioner = RefKuesioner::find($id);
+
+        return view('pages.ref_kuesioner.detail', [
+            'ref_kuesioner' => $ref_kuesioner
+        ]);
     }
 
     /**
