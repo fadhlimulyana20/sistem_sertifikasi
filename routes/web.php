@@ -115,5 +115,7 @@ Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->group(fu
     Route::get('/', [RefJenisSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [RefJenisSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [RefJenisSertifikasiController::class, 'store'])->name('store');
+    Route::get('/edit/{id}',[RefJenisSertifikasiController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [RefJenisSertifikasiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefJenisSertifikasiController::class, 'destroy'])->name('destroy');
 });

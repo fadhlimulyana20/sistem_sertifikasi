@@ -40,14 +40,15 @@ class RefJenisSertifikasiController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'keterangan' => 'required'
+            'keterangan' => 'required',
+            'status_jenis_sertifikasi'
         ]);
 
         $ref_jenis_sertifikasi = new RefJenisSertifikasi;
         $ref_jenis_sertifikasi->nama = $request->input('nama');
         $ref_jenis_sertifikasi->keterangan = $request->input('keterangan');
         $ref_jenis_sertifikasi->status_jenis_sertifikasi = $request->input('status_jenis_sertifikasi');
-        $ref_jenis_sertifikasi->is_aktif= true;
+        $ref_jenis_sertifikasi->is_aktif=true;
         $ref_jenis_sertifikasi->save();
 
         return redirect(route('ref_jenis_sertifikasi.index'));
@@ -72,7 +73,10 @@ class RefJenisSertifikasiController extends Controller
      */
     public function edit($id)
     {
-
+        $ref_jenis_sertifikasi= RefJenisSertifikasi::find($id);
+        return view('pages.ref_jenis_sertifikasi.edit', [
+            'ref_jenis_sertifikasi'=> $ref_jenis_sertifikasi
+        ]);
     }
 
     /**
@@ -84,7 +88,20 @@ class RefJenisSertifikasiController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nama' => 'required',
+            'keterangan' => 'required',
+            'status_jenis_sertifikasi'
+        ]);
 
+        $ref_jenis_sertifikasi= RefJenisSertifikasi::find($id);
+        $ref_jenis_sertifikasi->nama = $request->input('nama');
+        $ref_jenis_sertifikasi->keterangan = $request->input('keterangan');
+        $ref_jenis_sertifikasi->status_jenis_sertifikasi = $request->input('status_jenis_sertifikasi');
+        $ref_jenis_sertifikasi->is_aktif=true;
+        $ref_jenis_sertifikasi->save();
+
+        return redirect(route('ref_jenis_sertifikasi.index'));
     }
 
     /**
@@ -97,6 +114,6 @@ class RefJenisSertifikasiController extends Controller
     {
         $ref_jenis_sertifikasi = RefJenisSertifikasi::find($id);
         $ref_jenis_sertifikasi->delete();
-        return redirect(route('ref_jenis_sertifikasi.index'));
+        return redirect()->route('ref_jenis_sertifikasi.index')->with(['message'=> 'Successfully deleted!!']);
     }
 }
