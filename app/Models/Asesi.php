@@ -9,7 +9,7 @@ class Asesi extends Model
 {
     use HasFactory;
 
-    protected $table="asesi";
+    protected $table = "asesi";
 
     protected $fillable = [
         'nim',
@@ -22,4 +22,9 @@ class Asesi extends Model
         'email',
         'kualifikasi_pendidikan'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }
