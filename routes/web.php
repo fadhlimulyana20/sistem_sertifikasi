@@ -121,7 +121,7 @@ Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->middleware('
     Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
 });
 
-Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->group(function () {
+Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->middleware('auth')->group(function () {
     Route::get('/', [RefJenisSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [RefJenisSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [RefJenisSertifikasiController::class, 'store'])->name('store');
