@@ -53,7 +53,7 @@ Route::prefix('jadwal')->name('jadwal.')->middleware('auth')->group(function () 
     Route::get('/detail/{id}', [JadwalController::class, 'show'])->name('show');
 });
 
-Route::prefix('asesor')->name('asesor.')->group(function () {
+Route::prefix('asesor')->name('asesor.')->middleware('auth')->group(function () {
     Route::get('/', [AsesorController::class, 'index'])->name('index');
     Route::get('/create', [AsesorController::class, 'create'])->name('create');
     Route::post('/store', [AsesorController::class, 'store'])->name('store');
