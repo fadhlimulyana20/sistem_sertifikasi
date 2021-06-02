@@ -102,7 +102,7 @@ Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function () {
     Route::get('/detail/{id}', [RefKuesionerController::class, 'detail'])->name('show');
 });
 
-Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->group(function () {
+Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->middleware('auth')->group(function () {
     Route::get('/', [SyaratSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [SyaratSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [SyaratSertifikasiController::class, 'store'])->name('store');
