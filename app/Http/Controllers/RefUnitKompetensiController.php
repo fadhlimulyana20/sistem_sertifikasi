@@ -62,7 +62,7 @@ class RefUnitKompetensiController extends Controller
     {
         $ref_unit_kompetensi = RefUnitKompetensi::find($id);
 
-        return view('pages.ref_kegiatan.detail', [
+        return view('pages.ref_unit_kompetensi.detail', [
             'ref_unit_kompetensi' => $ref_unit_kompetensi
         ]);
     }

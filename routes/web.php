@@ -111,7 +111,7 @@ Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->middleware('au
     Route::delete('/delete/{id}', [SyaratSertifikasiController::class, 'destroy'])->name('destroy');
 });
 
-Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->group(function () {
+Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->middleware('auth')->group(function () {
     Route::get('/', [RefUnitKompetensiController::class, 'index'])->name('index');
     Route::get('/create', [RefUnitKompetensiController::class, 'create'])->name('create');
     Route::post('/store', [RefUnitKompetensiController::class, 'store'])->name('store');
