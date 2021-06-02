@@ -16,4 +16,14 @@ class Pendaftar extends Model
         'tanggal_status_akhir',
         'status_pendaftaran'
     ];
+
+    public function instrumen()
+    {
+        return $this->hasMany(PendaftarInstrumen::class, 'id_pendaftar', 'id');
+    }
+
+    public function asesi()
+    {
+        return $this->belongsTo(Asesi::class, 'id_asesi', 'id');
+    }
 }

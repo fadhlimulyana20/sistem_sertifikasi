@@ -5,6 +5,7 @@ use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PenawaranSertifikasiController;
 use App\Http\Controllers\PendaftarController;
 use App\Http\Controllers\AsesorController;
+use App\Http\Controllers\PendaftarInstrumenController;
 use App\Http\Controllers\RefJenisSertifikasiController;
 use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\RefKuesionerController;
@@ -36,6 +37,10 @@ require __DIR__ . '/auth.php';
 Route::prefix('pendaftar')->name('pendaftar.')->group(function () {
     Route::get('/', [PendaftarController::class, 'index'])->name('index');
     Route::get('/create', [PendaftarController::class, 'create'])->name('create');
+
+    Route::prefix('instrumen')->name('instrumen.')->group(function () {
+        Route::get('/{id_pendaftar}', [PendaftarInstrumenController::class, 'index'])->name('index');
+    });
 });
 
 Route::prefix('jadwal')->name('jadwal.')->middleware('auth')->group(function () {

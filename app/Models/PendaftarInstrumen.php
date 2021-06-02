@@ -19,4 +19,14 @@ class PendaftarInstrumen extends Model
         'id_instrumen_asesmen',
         'id_pendaftar'
     ];
+
+    public function pendaftar()
+    {
+        return $this->belongsTo(Pendaftar::class, 'id_pendaftar', 'id');
+    }
+
+    public function instrumenAsesmen()
+    {
+        return $this->belongsTo(InstrumenAsesmenKompetensi::class, 'id_instrumen_asesmen', 'id');
+    }
 }
