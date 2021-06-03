@@ -11,6 +11,7 @@ use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\RefKuesionerController;
 use App\Http\Controllers\SyaratSertifikasiController;
 use App\Http\Controllers\RefUnitKompetensiController;
+use App\Http\Controllers\InstrumenAsesmenKompetensiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -119,6 +120,10 @@ Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->middleware('
     Route::put('/update/{id}', [RefUnitKompetensiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefUnitKompetensiController::class, 'destroy'])->name('destroy');
     Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
+
+    Route::prefix('instrumen')->name('instrumen.')->group(function () {
+        Route::get('/{id_ref_unit_kompetensi}', [InstrumenAsesmenKompetensiController::class, 'index'])->name('index');
+    });
 });
 
 Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->middleware('auth')->group(function () {
