@@ -17,9 +17,11 @@ class InstrumenAsesmenKompetensiController extends Controller
     {
         $unitKompetensi = InstrumenAsesmenKompetensi::find($id_ref_unit_kompetensi);
 
-        if (!isset($id_ref_unit_kompetensi)) {
+        if (!isset($unitKompetensi)) {
             return abort(404);
         }
+
+        // $instrumen_asesmen = $unitKompetensi->instrumenAsesmenKompetensiinstrumen;
 
         return view('pages.ref_unit_kompetensi.index', [
             'nama' => $unitKompetensi,
