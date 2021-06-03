@@ -26,4 +26,8 @@ class Pendaftar extends Model
     {
         return $this->belongsTo(Asesi::class, 'id_asesi', 'id');
     }
+
+    public function syarat() {
+        return $this->hasMany(PendaftarSyarat::class, 'id_pendaftar', 'id');
+    }
 }
