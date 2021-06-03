@@ -11,6 +11,8 @@ use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\RefKuesionerController;
 use App\Http\Controllers\SyaratSertifikasiController;
 use App\Http\Controllers\RefUnitKompetensiController;
+use App\Http\Controllers\InstrumenAsesmenKompetensiController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -111,7 +113,7 @@ Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->middleware('au
     Route::delete('/delete/{id}', [SyaratSertifikasiController::class, 'destroy'])->name('destroy');
 });
 
-Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->group(function () {
+Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->middleware('auth')->group(function () {
     Route::get('/', [RefUnitKompetensiController::class, 'index'])->name('index');
     Route::get('/create', [RefUnitKompetensiController::class, 'create'])->name('create');
     Route::post('/store', [RefUnitKompetensiController::class, 'store'])->name('store');
@@ -119,9 +121,13 @@ Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->group(functi
     Route::put('/update/{id}', [RefUnitKompetensiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefUnitKompetensiController::class, 'destroy'])->name('destroy');
     Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
+
+    Route::prefix('instrumen')->name('instrumen.')->group(function () {
+        Route::get('/{id_ref_unit_kompetensi}', [InstrumenAsesmenKompetensiController::class, 'index'])->name('index');
+    });
 });
 
-Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->group(function () {
+Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->middleware('auth')->group(function () {
     Route::get('/', [RefJenisSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [RefJenisSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [RefJenisSertifikasiController::class, 'store'])->name('store');

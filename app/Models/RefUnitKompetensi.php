@@ -15,4 +15,8 @@ class RefUnitKompetensi extends Model
         'nama',
         'is_aktif'
     ];
+
+    public function instrumenAsesmenKompetensi() {
+        return $this->hasMany(InstrumenAsesmenKompetensi::class, 'id_ref_unit_kompetensi');
+    }
 }

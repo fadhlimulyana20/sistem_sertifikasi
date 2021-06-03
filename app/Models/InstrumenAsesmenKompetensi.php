@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InstrumenAsesmenKompetensi extends Model
 {
-    use HasFactory, softDeletes;
+    use HasFactory/*, softDeletes*/;
     protected $table = 'instrumen_asesmen_kompetensi';
 
     protected $fillable= [
@@ -17,4 +17,8 @@ class InstrumenAsesmenKompetensi extends Model
         'status_instrumen',
         'is_aktif',
     ];
+
+    public function unitKompetensi(){
+        return $this->belongsTo(RefUnitKompetensi::class, 'id_ref_unit_kompetensi');
+    }
 }
