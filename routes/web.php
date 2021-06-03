@@ -11,6 +11,7 @@ use App\Http\Controllers\RefKegiatanController;
 use App\Http\Controllers\RefKuesionerController;
 use App\Http\Controllers\SyaratSertifikasiController;
 use App\Http\Controllers\RefUnitKompetensiController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
