@@ -107,7 +107,7 @@ class SyaratSertifikasiController extends Controller
      */
     public function destroy($id)
     {
-        $syarat_sertifikasi = SyaratSertifikasi::find($id);
+        $syarat_sertifikasi = SyaratSertifikasi :: find($id);
         
         $syarat_sertifikasi->delete();
 
