@@ -10,8 +10,21 @@
 
         {{-- Tambahkan navigasi di sini --}}
 
-        <li class="{{ strpos(Route::currentRouteName(), 'asesi') !== false ? 'active' : '' }}"><a class="nav-link"
-                href="{{ route('asesi.index') }}"><i class="fa fa-users"></i> <span>Asesi</span></a></li>
+        {{-- <li class="{{ strpos(Route::currentRouteName(), 'asesi') !== false ? 'active' : '' }}"><a class="nav-link"
+                href="{{ route('asesi.index') }}"><i class="fa fa-users"></i> <span>Asesi</span></a></li> --}}
+
+        <li class="{{ strpos(Route::currentRouteName(), 'asesi') !== false ? 'active' : '' }}">
+            <a href="{{ route('asesi.index') }}" class="nav-link">
+                <i class="fas fa-user-graduate"></i>
+                <span>Asesi</span>
+            </a>
+        </li>
+        <li class="{{ strpos(Route::currentRouteName(), 'ref_kegiatan') !== false ? 'active' : '' }}">
+            <a href="{{ route('ref_kegiatan.index') }}" class="nav-link">
+                <i class="far fa-calendar"></i>
+                <span>Kegiatan</span>
+            </a>
+        </li>
 
 
 

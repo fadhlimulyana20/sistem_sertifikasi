@@ -15,7 +15,6 @@
                 <div class="bg-white p-3 rounded">
                     <a href="{{ route('asesi.create') }}" class="btn btn-success mb-3">Tambah</a>
                     <div class="table-responsive">
-
                         <table class="table">
                             <thead>
                                 <tr>
@@ -58,7 +57,3 @@
         </div>
     </section>
 @endsection
-
-
-<body>
-</body>
