@@ -128,4 +128,9 @@ Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->middlewa
     Route::get('/edit/{id}', [RefJenisSertifikasiController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RefJenisSertifikasiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefJenisSertifikasiController::class, 'destroy'])->name('destroy');
+
+    Route::prefix('unit_kompetensi')->name('unit_kompetensi')->group(function(){    
+        Route::get('/{$id_ref_jenis_sertifikasi}', [UnitKompetensiSertifikasiController::class, 'index'])->name('index');
+    });
+
 });

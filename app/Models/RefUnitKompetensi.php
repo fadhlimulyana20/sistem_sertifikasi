@@ -19,4 +19,8 @@ class RefUnitKompetensi extends Model
     public function instrumenAsesmenKompetensi() {
         return $this->hasMany(InstrumenAsesmenKompetensi::class, 'id_ref_unit_kompetensi');
     }
+
+    public function refJenisSertifikasi(){
+        return $this->hasMany(UnitKompetensiSertifikasi::class, 'id_ref_kompetensi', 'id');
+    }
 }

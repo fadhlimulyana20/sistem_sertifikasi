@@ -17,4 +17,12 @@ class UnitKompetensiSertifikasi extends Model
         'id_ref_jenis_sertifikasi',
         'id_ref_kompetensi',
     ];
+    public function RefJenisSertifikasi(){
+        return $this->hasMany(RefJenisSertifikasi::class, 'id_ref_jenis_sertifikasi', 'id');
+    }
+    
+
+    public function RefUnitKompetensi(){
+        return $this->hasMany(RefUnitKompetensi::class, 'id_ref_kompetensi', 'id');
+    }
 }
