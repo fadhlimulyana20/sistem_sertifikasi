@@ -44,6 +44,13 @@
             </a>
         </li>
 
+        <li>
+            <a href="{{route('ref_jenis_sertifikasi.index')}}" class="nav-link">
+                <i class="fas fa-book"></i>
+                <span>Ref Jenis Sertifikasi</span>
+            </a>
+        </li>
+
 
         {{-- @if (Auth::user()->can('manage-users'))
       <li class="menu-header">Users</li>
