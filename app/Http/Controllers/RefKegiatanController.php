@@ -28,7 +28,7 @@ class RefKegiatanController extends Controller
      */
     public function create()
     {
-        return view('pages.ref_kegiatan.index');
+        return view('pages.ref_kegiatan.create');
     }
 
     /**
@@ -58,9 +58,13 @@ class RefKegiatanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_kegiatan)
     {
-        //
+        $ref_kegiatan = RefKegiatan::find($id_kegiatan);
+
+        return view('pages.ref_kegiatan.detail', [
+            'ref_kegiatan' => $ref_kegiatan
+        ]);
     }
 
     /**
@@ -74,7 +78,7 @@ class RefKegiatanController extends Controller
         $ref_kegiatan = RefKegiatan::find($id_kegiatan);
 
 // page.penawaran_sertifikasi belum ditambahkan
-        return view('pages.penawaran_sertifikasi.ref_kegiatan.edit', [
+        return view('pages.ref_kegiatan.edit', [
             'ref_kegiatan' => $ref_kegiatan,
         ]);
     }
@@ -94,8 +98,8 @@ class RefKegiatanController extends Controller
         ]);
 
         $ref_kegiatan = RefKegiatan::find($id_kegiatan);
-        $ref_kegiatan->nama_kegiatan = $request->nama_kegiatan;
-        $ref_kegiatan->deskripsi = $request->deskripsi;
+        $ref_kegiatan->nama_kegiatan = $request->input('nama_kegiatan');
+        $ref_kegiatan->deskripsi = $request->input('deskripsi');
         $ref_kegiatan->save();
 
         return redirect(route('ref_kegiatan.index'))->with('status', 'Berhasil memperbarui kegiatan');

@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
+@extends('layouts.admin-master')
+
+@section('title')
+    Syarat Sertifikasi
+@endsection
+
+@section('content')
 <body>
+    <section class="section">
+        <div class="section-header">
+            <h1>Syarat Sertifikasi</h1>
+        </div>
     <div class="container py-5">
-        <h1>Syarat Sertifikasi</h1>
         <a class="btn btn-success" href="{{ route('syarat_sertifikasi.create') }}">Tambah</a>
         <table class="table">
             <thead>
@@ -43,4 +43,4 @@
         </table>
     </div>
 </body>
-</html>
+@endsection

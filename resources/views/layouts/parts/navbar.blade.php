@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('ref_kegiatan.index') }}">Ref Kegiatan</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('syarat_sertifikasi.index') }}">Syarat Sertifikasi</a>
+                </li>
             </ul>
         </div>
     </div>
