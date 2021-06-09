@@ -7,7 +7,7 @@ Menambah Unit Kompetensi
 @section('content')
     <section class="section">
     <div class="section-header">
-        <h1>Menambah Unit</h1>
+        <h1>Menambah Unit Kompetensi</h1>
     </div>
 
     <div class="section-body">

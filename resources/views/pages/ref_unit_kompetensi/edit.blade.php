@@ -7,18 +7,21 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Edit Unit</h1>
+    <h1>Edit Unit Kompetensi</h1>
   </div>
 
   <div class="section-body">
     <div class="container py-5">
-        <div class="bg-white p-3 rounded">
-        <form action="{{ route('ref_unit_kompetensi.update', $ref_unit_kompetensi->id) }}" method="POST">
-            @csrf
-            @method('PUT')
+        @if ($errors->any())
+        {{ implode('', $errors->all('<div>:message</div>')) }}
+        @endif
+            <div class="bg-white p-3 rounded">
+            <form action="{{ route('ref_unit_kompetensi.update', $ref_unit_kompetensi->id) }}" method="POST">
+                @csrf
+                @method('PUT')
             <div class="mb-3">
                 <label class="form-label" for="nama">Nama</label>
-                <input class="form-control" type="text" name="nama" id="nama" placeholder="nama"
+                <input class="form-control" type="text" name="nama" id="nama" placeholder="nama" value="{{ $ref_unit_kompetensi->nama }}"
                     required>
             </div>
             <button class="btn btn-success" type="submit">Simpan</button>
