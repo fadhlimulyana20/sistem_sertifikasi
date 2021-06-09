@@ -84,14 +84,14 @@ Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(fu
     Route::get('/detail/{id}', [PenawaranSertifikasiController::class, 'show'])->name('show');
 });
 
-Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->group(function () {
+Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->middleware('auth')->group(function () {
     Route::get('/', [RefKegiatanController::class, 'index'])->name('index');
     Route::get('/create', [RefKegiatanController::class, 'create'])->name('create');
     Route::post('/store', [RefKegiatanController::class, 'store'])->name('store');
     Route::get('/edit/{id}', [RefKegiatanController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RefKegiatanController::class, 'update'])->name('update');
-    Route::delete('/delete/{id}', [RefKegiatanController::class, 'index'])->name('destroy');
-    Route::get('/detail/{id}', [RefKegiatanController::class, 'detail'])->name('show');
+    Route::delete('/delete/{id}', [RefKegiatanController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [RefKegiatanController::class, 'show'])->name('show');
 });
 
 Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function () {
