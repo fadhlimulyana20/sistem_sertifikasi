@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.admin-master')
+
+@section('title')
+    Edit Unit Kompetensi
+@endsection
+
+@section('content')
+<section class="section">
+  <div class="section-header">
+    <h1>Edit Unit</h1>
+  </div>
+
+  <div class="section-body">
     <div class="container py-5">
-        <h1>Mengubah Unit Kompetensi</h1>
+        <div class="bg-white p-3 rounded">
         <form action="{{ route('ref_unit_kompetensi.update', $ref_unit_kompetensi->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -21,6 +23,8 @@
             </div>
             <button class="btn btn-success" type="submit">Simpan</button>
         </form>
+        </div>
     </div>
-</body>
-</html>
+  </div>
+</section>
+@endsection
