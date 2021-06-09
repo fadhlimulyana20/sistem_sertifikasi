@@ -37,7 +37,7 @@
                 <span>Sertifikasi</span>
             </a>
         </li>
-        <li class="{{ strpos(Route::currentRouteName(), 'ref_kegiatan') !== false ? 'active' : '' }}">
+        <li class="{{ strpos(Route::currentRouteName(), 'syarat_sertifikasi') !== false ? 'active' : '' }}">
             <a href="{{ route('syarat_sertifikasi.index') }}" class="nav-link">
                 <i class="far fa-calendar"></i>
                 <span>Syarat Sertifikasi</span>
