@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PenawaranSertifikasi;
+use App\Models\RefJenisSertifikasi;
+use App\Models\RefKegiatan;
 use Illuminate\Http\Request;
 
 class PenawaranSertifikasiController extends Controller
@@ -27,7 +29,12 @@ class PenawaranSertifikasiController extends Controller
      */
     public function create()
     {
-        return view ('pages.penawaran_sertifikasi.create');
+        $jenis_sertifikasi = RefJenisSertifikasi::all();
+        $kegiatan = RefKegiatan::all();
+        return view ('pages.penawaran_sertifikasi.create', [
+            'jenis_sertifikasi' => $jenis_sertifikasi,
+            'kegiatan' => $kegiatan
+        ]);
     }
 
     /**
@@ -77,9 +84,13 @@ class PenawaranSertifikasiController extends Controller
     public function edit($id)
     {
         $penawaran_sertifikasi = PenawaranSertifikasi::find($id);
-
+        $jenis_sertifikasi = RefJenisSertifikasi::all();
+        $kegiatan = RefKegiatan::all();
+        
         return view('pages.penawaran_sertifikasi.edit', [
-            'penawaran_sertifikasi' => $penawaran_sertifikasi
+            'penawaran_sertifikasi' => $penawaran_sertifikasi,
+            'jenis_sertifikasi' => $jenis_sertifikasi,
+            'kegiatan' => $kegiatan
         ]);
     }
 

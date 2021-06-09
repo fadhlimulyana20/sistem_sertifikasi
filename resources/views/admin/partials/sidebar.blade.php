@@ -25,6 +25,18 @@
                 <span>Kegiatan</span>
             </a>
         </li>
+        <li class="{{ strpos(Route::currentRouteName(), 'jadwal') !== false ? 'active' : '' }}">
+            <a href="{{ route('jadwal.index') }}" class="nav-link">
+                <i class="far fa-calendar-alt"></i>
+                <span>Jadwal</span>
+            </a>
+        </li>
+        <li class="{{ strpos(Route::currentRouteName(), 'penawaran_sertifikasi') !== false ? 'active' : '' }}">
+            <a href="{{ route('penawaran_sertifikasi.index') }}" class="nav-link">
+                <i class="fas fa-certificate"></i>
+                <span>Sertifikasi</span>
+            </a>
+        </li>
 
 
 

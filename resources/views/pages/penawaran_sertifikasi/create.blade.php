@@ -1,39 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin-master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Document</title>
-</head>
+@section('title', 'Menambahkan Penawaran Sertifikasi')
 
-<body>
-    <div class="container py-5">
+@section('content')
+<section class="section">
+    <div class="section-header">
         <h1>Menambahkan Penawaran Sertifikasi</h1>
-        <form action="{{ route('penawaran_sertifikasi.store') }}" method="POST">
-            @csrf
-            @method('POST')
-            <div class="mb-3">
-                <label class="form-label" for="periode">Periode</label>
-                <input class="form-control" type="text" name="periode" id="periode"
-                    placeholder="Periode" required>
-            </div>
-            <div class="mb-3">
-                <label for="deskripsi_penawaran" class="form-label">Deskripsi Penawaran</label>
-                <textarea class="form-control" name="deskripsi_penawaran" id="deskripsi_penawaran" rows="5" required></textarea>
-            </div>
-            <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" name="is_active" value="" id="is_active">
-                <label class="form-check-label" for="is_active">
-                    Active?
-                </label>
-            </div>
-            <button class="btn btn-success" type="submit">Simpan</button>
-        </form>
     </div>
-</body>
-
-</html>
+    <div class="section-body">
+        <div class="container">
+            <div class="bg-white p-3 rounded">
+                <form action="{{ route('penawaran_sertifikasi.store') }}" method="POST">
+                    @csrf
+                    @method('POST')
+                    <div class="mb-3">
+                        <label for="jenis_sertifikasi">Jenis Sertifikasi</label>
+                        <select class="form-control" id="jenis_sertifikasi" name="jenis_sertifikasi">
+                            <option selected>Open this select menu</option>
+                            @foreach ($jenis_sertifikasi as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="periode">Periode</label>
+                        <input class="form-control" type="text" name="periode" id="periode"
+                            placeholder="Periode" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deskripsi_penawaran" class="form-label">Deskripsi Penawaran</label>
+                        <textarea class="form-control" name="deskripsi_penawaran" id="deskripsi_penawaran" rows="5" required></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" name="is_active" value="" id="is_active">
+                        <label class="form-check-label" for="is_active">
+                            Active?
+                        </label>
+                    </div>
+                    <button class="btn btn-success" type="submit">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection

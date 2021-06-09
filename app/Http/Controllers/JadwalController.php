@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jadwal;
+use App\Models\PenawaranSertifikasi;
+use App\Models\RefKegiatan;
 use Illuminate\Http\Request;
 
 class JadwalController extends Controller
@@ -28,7 +30,12 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        return view('pages.jadwal.create');
+        $penawaran_sertifikasi = PenawaranSertifikasi::all();
+        $kegiatan = RefKegiatan::all();
+        return view('pages.jadwal.create', [
+            'penawaran_sertifikasi' => $penawaran_sertifikasi,
+            'kegiatan' => $kegiatan
+        ]);
     }
 
     /**
@@ -80,8 +87,12 @@ class JadwalController extends Controller
     public function edit($id)
     {
         $jadwal = Jadwal::find($id);
+        $penawaran_sertifikasi = PenawaranSertifikasi::all();
+        $kegiatan = RefKegiatan::all();
         return view('pages.jadwal.edit', [
-            'jadwal' => $jadwal
+            'jadwal' => $jadwal,
+            'penawaran_sertifikasi' => $penawaran_sertifikasi,
+            'kegiatan' => $kegiatan
         ]);
     }
 
