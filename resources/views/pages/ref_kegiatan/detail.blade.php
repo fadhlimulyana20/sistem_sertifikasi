@@ -1,26 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.admin-master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
+@section('title')
+    Detail
+@endsection
 
-<body>
-    <div class="container py-5">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <h5 class="fw-bold mb-0">Nama Kegiatan</h5>
-                <p>{{ $ref_kegiatan->nama_kegiatan }}</p>
-                <h5 class="fw-bold mb-0">Deskripsi</h5>
-                <p>{{ $ref_kegiatan->deskripsi }}</p>
-            </li>
-        </ul>
+@section('content')
+    <section class="section">
+    <div class="section-header">
+        <h1>Detail</h1>
     </div>
-</body>
 
-</html>
+    <div class="section-body">
+        <div class="container">
+            <div class="bg-white p-3 rounded">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h5 class="fw-bold mb-0">Nama Kegiatan</h5>
+                        <p>{{ $ref_kegiatan->nama_kegiatan }}</p>
+                        <h5 class="fw-bold mb-0">Deskripsi</h5>
+                        <p>{{ $ref_kegiatan->deskripsi }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </section>
+@endsection
