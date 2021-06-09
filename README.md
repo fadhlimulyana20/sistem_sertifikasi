@@ -59,3 +59,6 @@ $ npm run dev
 ```
 $ php artisan serve
 ```
+
+## Cara Pakai Stisla Admin
+Lihat videonya dulu gaes, **[Video Tutorial](https://drive.google.com/file/d/1P_glaWocW578tuu9tLoqI48u7FewYh9j/view?usp=sharing)**

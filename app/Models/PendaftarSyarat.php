@@ -12,11 +12,15 @@ class PendaftarSyarat extends Model
     protected $table = "pendaftar_syarat";
 
     protected $fillable = [
-        'status_verifikasi_syarat',
-        'path_bukti',
-        'verifikasi_asesor',
-        'komentar_asesor',
         'id_syarat_sertifikasi',
         'id_pendaftar'
     ];
+
+    public function syarat_sertifikasi() {
+        return $this->belongsTo(SyaratSertifikasi::class, 'id_syarat_sertifikasi', 'id');
+    }
+
+    public function pendaftar() {
+        return $this->belongsTo(Pendaftar::class, 'id_pendaftar', 'id');
+    }
 }
