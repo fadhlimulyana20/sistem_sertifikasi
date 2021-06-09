@@ -44,7 +44,7 @@
             </a>
         </li>
 
-        <li>
+        <li class="{{ strpos(Route::currentRouteName(), 'ref_jenis_sertifikasi') !== false ? 'active' : '' }}">
             <a href="{{route('ref_jenis_sertifikasi.index')}}" class="nav-link">
                 <i class="fas fa-book"></i>
                 <span>Ref Jenis Sertifikasi</span>
