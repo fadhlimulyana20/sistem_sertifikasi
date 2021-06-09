@@ -25,7 +25,12 @@
                 <span>Kegiatan</span>
             </a>
         </li>
-
+        <li class="{{ strpos(Route::currentRouteName(), 'ref_kegiatan') !== false ? 'active' : '' }}">
+            <a href="{{ route('syarat_sertifikasi.index') }}" class="nav-link">
+                <i class="far fa-calendar"></i>
+                <span>Syarat Sertifikasi</span>
+            </a>
+        </li>
 
 
         {{-- @if (Auth::user()->can('manage-users'))
