@@ -23,7 +23,7 @@ Mengubah Ref Jenis Sertifikasi
 
               <div class="mb-3">
                   <label for="keterangan" class="form-label">Keterangan</label>
-                  <textarea class="form-control" name="keterangan" id="keterangan" rows="2" required>{{$ref_jenis_sertifikasi->nama}}</textarea>
+                  <textarea class="form-control" name="keterangan" id="keterangan" rows="2" required>{{$ref_jenis_sertifikasi->keterangan}}</textarea>
               </div>
               <div class="row">
                   <div class="col">
