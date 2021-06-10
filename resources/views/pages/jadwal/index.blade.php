@@ -10,7 +10,7 @@
         <div class="section-body">
             <div class="container ">
                 <div class="bg-white p-3 rounded">
-                    <a class="btn btn-success" href="{{ route('jadwal.create') }}">Tambah</a>
+                    <a class="btn btn-success mb-3" href="{{ route('jadwal.create') }}">Tambah</a>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
