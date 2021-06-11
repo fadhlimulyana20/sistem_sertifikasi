@@ -18,6 +18,8 @@
                     <li class="list-group-item">
                 <h5 class="fw-bold mb-0">Nama</h5>
                 <p>{{ $ref_unit_kompetensi->nama }}</p>
+                <h5 class="fw-bold mb-0">Aktif? (1 = ya, 0 = tidak)</h5>
+                <p>{{ $ref_unit_kompetensi->is_aktif }}</p>
                     </li>
                 </ul>
             </div>
