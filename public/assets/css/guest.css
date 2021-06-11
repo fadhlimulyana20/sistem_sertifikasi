@@ -1,0 +1,75 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  body {
+      padding-top: 3rem;
+      color: #6c757d;
+      font-family: 'Segoe UI';
+    }
+
+    main {
+        min-height: 74.3vh;
+    }
+
+    nav {
+        background-color: #6070e5;
+        padding:10px;
+    }
+
+    h2, h1 {
+        font-family: "Raleway";
+    }
+
+    .nav-link:hover{
+      font-weight: bold;
+    }
+
+    .nav-link.active {
+      border-bottom: 2px solid white;
+    }
+
+
+  footer {
+    background-color: #6070e5;
+  }
+
+  footer p {
+    color: white;
+  }
+
+  .box-sosmed{
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: rgb(17, 17, 17);
+  }
+
+  .box-sosmed i {
+    vertical-align: bottom;
+    font-size: 18px;
+    color: #eee;
+  }
+
+  .sosmed-wrapper {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    padding: 0px 10%;
+    -webkit-box-pack: justify;
+    justify-content: center;
+  }
