@@ -94,14 +94,14 @@ Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->middleware('auth')->group(
     Route::get('/detail/{id}', [RefKegiatanController::class, 'show'])->name('show');
 });
 
-Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function () {
+Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->middleware('auth')->group(function () {
     Route::get('/', [RefKuesionerController::class, 'index'])->name('index');
     Route::get('/create', [RefKuesionerController::class, 'create'])->name('create');
     Route::post('/store', [RefKuesionerController::class, 'store'])->name('store');
     Route::get('/edit/{id}', [RefKuesionerController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RefKuesionerController::class, 'update'])->name('update');
-    Route::delete('/delete/{id}', [RefKuesionerController::class, 'index'])->name('destroy');
-    Route::get('/detail/{id}', [RefKuesionerController::class, 'detail'])->name('show');
+    Route::delete('/delete/{id}', [RefKuesionerController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [RefKuesionerController::class, 'show'])->name('show');
 });
 
 Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->middleware('auth')->group(function () {
@@ -135,7 +135,7 @@ Route::prefix('ref_jenis_sertifikasi')->name('ref_jenis_sertifikasi.')->middlewa
     Route::put('/update/{id}', [RefJenisSertifikasiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefJenisSertifikasiController::class, 'destroy'])->name('destroy');
 
-    Route::prefix('unit_kompetensi')->name('unit_kompetensi')->group(function(){    
+    Route::prefix('unit_kompetensi')->name('unit_kompetensi')->group(function(){
         Route::get('/{$id_ref_jenis_sertifikasi}', [UnitKompetensiSertifikasiController::class, 'index'])->name('index');
     });
 
