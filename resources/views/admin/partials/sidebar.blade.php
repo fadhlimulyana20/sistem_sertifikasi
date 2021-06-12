@@ -51,6 +51,20 @@
             </a>
         </li>
 
+        <li class="{{ strpos(Route::currentRouteName(), 'ref_kuesioner') !== false ? 'active' : '' }}">
+            <a href="{{route('ref_kuesioner.index')}}" class="nav-link">
+                <i class="fas fa-question-circle"></i>
+                <span>Ref Kuesioner</span>
+            </a>
+        </li>
+
+        <li class="{{ strpos(Route::currentRouteName(), 'ref_unit_kompetensi') !== false ? 'active' : '' }}">
+            <a href="{{route('ref_unit_kompetensi.index')}}" class="nav-link">
+                <i class="fas fa-question"></i>
+                <span>Unit Kompetensi</span>
+            </a>
+        </li>
+
 
         {{-- @if (Auth::user()->can('manage-users'))
       <li class="menu-header">Users</li>

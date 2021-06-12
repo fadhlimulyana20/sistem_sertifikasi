@@ -27,7 +27,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.welcome');
+});
+
+Route::get('/penawaran', function () {
+    return view('guest.penawaran');
+});
+
+Route::get('/tentang', function () {
+    return view('guest.tentang');
 });
 
 Route::get('/dashboard', function () {
@@ -94,14 +102,14 @@ Route::prefix('ref_kegiatan')->name('ref_kegiatan.')->middleware('auth')->group(
     Route::get('/detail/{id}', [RefKegiatanController::class, 'show'])->name('show');
 });
 
-Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->group(function () {
+Route::prefix('ref_kuesioner')->name('ref_kuesioner.')->middleware('auth')->group(function () {
     Route::get('/', [RefKuesionerController::class, 'index'])->name('index');
     Route::get('/create', [RefKuesionerController::class, 'create'])->name('create');
     Route::post('/store', [RefKuesionerController::class, 'store'])->name('store');
     Route::get('/edit/{id}', [RefKuesionerController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RefKuesionerController::class, 'update'])->name('update');
-    Route::delete('/delete/{id}', [RefKuesionerController::class, 'index'])->name('destroy');
-    Route::get('/detail/{id}', [RefKuesionerController::class, 'detail'])->name('show');
+    Route::delete('/delete/{id}', [RefKuesionerController::class, 'destroy'])->name('destroy');
+    Route::get('/detail/{id}', [RefKuesionerController::class, 'show'])->name('show');
 });
 
 Route::prefix('syarat_sertifikasi')->name('syarat_sertifikasi.')->middleware('auth')->group(function () {
@@ -120,7 +128,7 @@ Route::prefix('ref_unit_kompetensi')->name('ref_unit_kompetensi.')->middleware('
     Route::get('/edit/{id}', [RefUnitKompetensiController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [RefUnitKompetensiController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [RefUnitKompetensiController::class, 'destroy'])->name('destroy');
-    Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'detail'])->name('show');
+    Route::get('/detail/{id}', [RefUnitKompetensiController::class, 'show'])->name('show');
 
     Route::prefix('instrumen')->name('instrumen.')->group(function () {
         Route::get('/{id_ref_unit_kompetensi}', [InstrumenAsesmenKompetensiController::class, 'index'])->name('index');

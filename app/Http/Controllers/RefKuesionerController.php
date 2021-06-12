@@ -45,6 +45,7 @@ class RefKuesionerController extends Controller
 
         $ref_kuesioner = new RefKuesioner;
         $ref_kuesioner->pertanyaan = $request->input('pertanyaan');
+        //checkbox is_aktif belum berfungsi
         $ref_kuesioner->is_aktif = true;
 
         $ref_kuesioner->save();
@@ -75,7 +76,11 @@ class RefKuesionerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ref_kuesioner = RefKuesioner::find($id);
+
+        return view('pages.ref_kuesioner.edit', [
+            'ref_kuesioner' => $ref_kuesioner,
+        ]);
     }
 
     /**
@@ -87,7 +92,17 @@ class RefKuesionerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'pertanyaan' => 'required',
+        ]);
+
+        $ref_kuesioner = RefKuesioner::find($id);
+        $ref_kuesioner->pertanyaan = $request->input('pertanyaan');
+        $ref_kuesioner->is_aktif= true;
+        //checkbox is_aktif belum berfungsi
+        $ref_kuesioner->save();
+
+        return redirect(route('ref_kuesioner.index'))->with('status', 'Berhasil memperbarui Kuesioner');
     }
 
     /**
@@ -98,6 +113,9 @@ class RefKuesionerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ref_kuesioner = RefKuesioner::find($id);
+        $ref_kuesioner->delete();
+
+        return redirect(route('ref_kuesioner.index'))->with('status', 'Berhasil menghapus' .$ref_kuesioner->pertanyaan);
     }
 }
