@@ -73,3 +73,67 @@
     -webkit-box-pack: justify;
     justify-content: center;
   }
+
+  .detail-penawaran{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .left{
+    flex: 50%;
+  }
+
+  .section-header{
+    margin-top:5em ;
+    margin-left: 4em;
+  }
+
+  .desc-penawaran{
+    margin-left: 5em;
+    margin-top: 1em;
+  }
+
+  .syarat h4{
+    margin-left: 3.4em;
+    margin-top: 1.5em;
+  }
+
+  .syarat li{
+    margin-left: 5em;
+    padding: 0.5em;
+  }
+
+  .unit_kompetensi{
+    margin-bottom: 10em;
+  }
+
+  .unit_kompetensi h4{
+    margin-left: 3.4em;
+    margin-top: 1.5em;
+  }
+
+  .unit_kompetensi li{
+    margin-left: 5em;
+    padding: 0.5em;
+  }
+
+  .right{
+    flex: 50%;
+  }
+
+  .right li{
+    list-style: none;
+    padding: 0.5em;
+    border: 1px solid black;
+  }
+
+  .right_content{
+    margin: 9em 6em;
+  }
+
+  #daftar{
+    width: 200px;
+    padding: 0.5em;
+    border: none;
+    margin: 1em 30%;
+    justify-content: center;
+  }
