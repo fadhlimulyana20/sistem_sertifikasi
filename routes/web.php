@@ -27,11 +27,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\GuestController@welcome');
-
-Route::get('/penawaran', function () {
-    return view('guest.penawaran');
-});
-
+Route::get('/penawaran', 'App\Http\Controllers\GuestController@penawaran');
+Route::get('/penawaran/detail/{id}', 'App\Http\Controllers\GuestController@show');
 Route::get('/tentang', 'App\Http\Controllers\GuestController@tentang');
 
 Route::get('/dashboard', function () {

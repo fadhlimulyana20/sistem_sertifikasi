@@ -85,6 +85,10 @@
     background-color: rgb(17, 17, 17);
   }
 
+  .div-card {
+      width: 100%;
+  }
+
   .box-sosmed i {
     vertical-align: bottom;
     font-size: 18px;
@@ -189,5 +193,4 @@
   }
   .marketing h1{
     padding-top: 20px;
-    padding-bottom: 52px;
   }
