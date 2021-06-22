@@ -16,4 +16,16 @@ class AsesorPendaftar extends Model
         'id_pendaftar',
         'hasil_ujian'
     ];
+
+    public function pendaftar()
+    {
+        return $this->belongsTo(Pendaftar::class, 'id_pendaftar', 'id');
+    }
+
+    public function asesor_jenis_sertifikasi()
+    {
+        return $this->belongsTo(Asesi::class, 'id_asesor_jenis_sertifikasi', 'id');
+    }
+
+
 }
