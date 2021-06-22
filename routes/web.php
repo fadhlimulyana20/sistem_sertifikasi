@@ -82,7 +82,7 @@ Route::prefix('asesi')->name('asesi.')->group(function () {
     Route::delete('delete/{id}', [AsesiController::class, 'destroy'])->name('destroy');
 });
 
-Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(function () {
+Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->middleware('auth')->group(function () {
     Route::get('/', [PenawaranSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [PenawaranSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [PenawaranSertifikasiController::class, 'store'])->name('store');
