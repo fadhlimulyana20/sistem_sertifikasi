@@ -14,8 +14,8 @@ class AlterAsesorPendaftarMemasukkanForeignKey extends Migration
     public function up()
     {
         Schema::table('asesor_pendaftar', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_asesor_jenis_sertifikasi')->nullable();
-            $table->unsignedBigInteger('id_pendaftar')->nullable();
+            $table->unsignedBigInteger('id_asesor_jenis_sertifikasi')->nullable()->change();
+            $table->unsignedBigInteger('id_pendaftar')->nullable()->change();
 
             $table->foreign('id_asesor_jenis_sertifikasi')->references('id')->on('asesor_jenis_sertifikasi')->onDelete('cascade');
             $table->foreign('id_pendaftar')->references('id')->on('pendaftar')->onDelete('cascade');
