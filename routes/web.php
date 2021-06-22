@@ -26,17 +26,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.welcome');
-});
+Route::get('/', 'App\Http\Controllers\GuestController@welcome');
 
 Route::get('/penawaran', function () {
     return view('guest.penawaran');
 });
 
-Route::get('/tentang', function () {
-    return view('guest.tentang');
-});
+Route::get('/tentang', 'App\Http\Controllers\GuestController@tentang');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
