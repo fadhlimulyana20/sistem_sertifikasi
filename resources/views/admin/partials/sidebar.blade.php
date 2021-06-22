@@ -19,6 +19,12 @@
                 <span>Asesi</span>
             </a>
         </li>
+        <li class="{{ strpos(Route::currentRouteName(), 'asesor') !== false ? 'active' : '' }}">
+            <a href="{{ route('asesor.index') }}" class="nav-link">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Asesor</span>
+            </a>
+        </li>
         <li class="{{ strpos(Route::currentRouteName(), 'ref_kegiatan') !== false ? 'active' : '' }}">
             <a href="{{ route('ref_kegiatan.index') }}" class="nav-link">
                 <i class="far fa-calendar"></i>
