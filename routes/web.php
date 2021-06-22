@@ -73,7 +73,7 @@ Route::prefix('asesor')->name('asesor.')->middleware('auth')->group(function () 
     Route::get('/detail/{id}', [AsesorController::class, 'show'])->name('show');
 });
 
-Route::prefix('asesi')->name('asesi.')->group(function () {
+Route::prefix('asesi')->name('asesi.')->middleware('auth')->group(function () {
     Route::get('/', [AsesiController::class, 'index'])->name('index');
     Route::get('/create', [AsesiController::class, 'create'])->name('create');
     Route::post('/store', [AsesiController::class, 'store'])->name('store');
