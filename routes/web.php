@@ -26,17 +26,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.welcome');
-});
-
-Route::get('/penawaran', function () {
-    return view('guest.penawaran');
-});
-
-Route::get('/tentang', function () {
-    return view('guest.tentang');
-});
+Route::get('/', 'App\Http\Controllers\GuestController@welcome');
+Route::get('/penawaran', 'App\Http\Controllers\GuestController@penawaran');
+Route::get('/penawaran/detail/{id}', 'App\Http\Controllers\GuestController@show');
+Route::get('/tentang', 'App\Http\Controllers\GuestController@tentang');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -73,7 +66,7 @@ Route::prefix('asesor')->name('asesor.')->middleware('auth')->group(function () 
     Route::get('/detail/{id}', [AsesorController::class, 'show'])->name('show');
 });
 
-Route::prefix('asesi')->name('asesi.')->group(function () {
+Route::prefix('asesi')->name('asesi.')->middleware('auth')->group(function () {
     Route::get('/', [AsesiController::class, 'index'])->name('index');
     Route::get('/create', [AsesiController::class, 'create'])->name('create');
     Route::post('/store', [AsesiController::class, 'store'])->name('store');
@@ -82,7 +75,7 @@ Route::prefix('asesi')->name('asesi.')->group(function () {
     Route::delete('delete/{id}', [AsesiController::class, 'destroy'])->name('destroy');
 });
 
-Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->group(function () {
+Route::prefix('penawaran_sertifikasi')->name('penawaran_sertifikasi.')->middleware('auth')->group(function () {
     Route::get('/', [PenawaranSertifikasiController::class, 'index'])->name('index');
     Route::get('/create', [PenawaranSertifikasiController::class, 'create'])->name('create');
     Route::post('/store', [PenawaranSertifikasiController::class, 'store'])->name('store');

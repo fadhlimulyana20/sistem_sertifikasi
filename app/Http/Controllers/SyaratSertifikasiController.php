@@ -28,7 +28,12 @@ class SyaratSertifikasiController extends Controller
      */
     public function create()
     {
-        return view('pages.syarat_sertifikasi.create');
+        $ref_jenis_sertifikasi = SyaratSertifikasi::all();
+
+        return view('pages.syarat_sertifikasi.create',[
+            'ref_jenis_sertifikasi' => $ref_jenis_sertifikasi
+        ]);
+        
     }
 
     /**
@@ -41,11 +46,13 @@ class SyaratSertifikasiController extends Controller
     {
         $request->validate([
             'syarat' => 'required',
+            'ref_jenis_sertifikasi' => 'required',
         ]);
 
         $syarat_sertifikasi = new SyaratSertifikasi;
         $syarat_sertifikasi->syarat = $request->input('syarat');
         $syarat_sertifikasi->is_aktif= true;
+        $syarat_sertifikasi-> id_ref_jenis_sertifikasi = $request -> input('ref_jenis_sertifikasi');
 
         $syarat_sertifikasi->save();
 
@@ -72,8 +79,11 @@ class SyaratSertifikasiController extends Controller
     public function edit($id)
     {
         $syarat_sertifikasi = SyaratSertifikasi::find($id);
+        $ref_jenis_sertifikasi = SyaratSertifikasi::all();
+
         return view('pages.syarat_sertifikasi.edit', [
-            'syarat_sertifikasi' => $syarat_sertifikasi
+            'syarat_sertifikasi' => $syarat_sertifikasi,
+            'ref_jenis_sertifikasi' => $ref_jenis_sertifikasi,
         ]);
     }
 
@@ -93,6 +103,7 @@ class SyaratSertifikasiController extends Controller
         $syarat_sertifikasi = SyaratSertifikasi :: find($id);
         $syarat_sertifikasi->syarat = $request->input('syarat');
         $syarat_sertifikasi->is_aktif= true;
+        $syarat_sertifikasi-> id_ref_jenis_sertifikasi = $request -> input('ref_jenis_sertifikasi');
 
         $syarat_sertifikasi->save();
 

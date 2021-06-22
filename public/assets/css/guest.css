@@ -49,6 +49,33 @@
     color: white;
   }
 
+  .mt-50 {
+    margin-top: 50px;
+  }
+
+  .bg-img {
+      background-image: url("assets/img/unsplash/andre-benz-1214056-unsplash.jpg") !important;
+  }
+
+
+  .card {
+    fill: white;
+    box-shadow: 20px 20px 50px 10px grey;
+    margin-bottom: 20px;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  .card-body p {
+      font-family: 'Open Sans';
+      font-size: 14px;
+  }
+
+  .row>*{
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+  }
+
   .box-sosmed{
     width: 32px;
     height: 32px;
@@ -56,6 +83,10 @@
     margin-right: 10px;
     border-radius: 50%;
     background-color: rgb(17, 17, 17);
+  }
+
+  .div-card {
+      width: 100%;
   }
 
   .box-sosmed i {
@@ -72,4 +103,94 @@
     padding: 0px 10%;
     -webkit-box-pack: justify;
     justify-content: center;
+  }
+
+  .detail-penawaran{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .left{
+    flex: 50%;
+  }
+
+  .section-header{
+    margin-top:5em ;
+    margin-left: 4em;
+  }
+
+  .desc-penawaran{
+    margin-left: 5em;
+    margin-top: 1em;
+  }
+
+  .syarat h4{
+    margin-left: 3.4em;
+    margin-top: 1.5em;
+  }
+
+  .syarat li{
+    margin-left: 5em;
+    padding: 0.5em;
+  }
+
+  .unit_kompetensi{
+    margin-bottom: 10em;
+  }
+
+  .unit_kompetensi h4{
+    margin-left: 3.4em;
+    margin-top: 1.5em;
+  }
+
+  .unit_kompetensi li{
+    margin-left: 5em;
+    padding: 0.5em;
+  }
+
+  .right{
+    flex: 50%;
+  }
+
+  .right li{
+    list-style: none;
+    padding: 0.5em;
+    border: 1px solid black;
+  }
+
+  .right_content{
+    margin: 9em 6em;
+  }
+
+  #daftar{
+    width: 200px;
+    padding: 0.5em;
+    border: none;
+    margin: 1em 30%;
+    justify-content: center;
+  }
+  .featurette-divider {
+    margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+  }
+
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+  }
+
+  .marketing {
+    margin-bottom: 72px;
+  }
+  .marketing .col-md-3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .marketing .col-md-3 p {
+    margin-right: 1.75rem;
+    padding-top: 10px;
+    margin-left: 1.75rem;
+  }
+  .marketing h1{
+    padding-top: 20px;
   }
