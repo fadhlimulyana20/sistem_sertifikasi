@@ -47,12 +47,14 @@ class PenawaranSertifikasiController extends Controller
     {
         $request->validate([
             'deskripsi_penawaran' => 'required',
+            'id_ref_jenis_sertifikasi'=>'required',
             'periode' => 'required',
         ]);
 
         $penawaran_sertifikasi = new PenawaranSertifikasi;
         $penawaran_sertifikasi->deskripsi_penawaran = $request->input('deskripsi_penawaran');
         $penawaran_sertifikasi->periode = $request->input('periode');
+        $penawaran_sertifikasi->id_ref_jenis_sertifikasi = $request->input('id_ref_jenis_sertifikasi');
         $penawaran_sertifikasi->is_active = true;
 
         $penawaran_sertifikasi->save();
@@ -84,12 +86,12 @@ class PenawaranSertifikasiController extends Controller
     public function edit($id)
     {
         $penawaran_sertifikasi = PenawaranSertifikasi::find($id);
-        $jenis_sertifikasi = RefJenisSertifikasi::all();
+        $id_ref_jenis_sertifikasi = RefJenisSertifikasi::all();
         $kegiatan = RefKegiatan::all();
-        
+
         return view('pages.penawaran_sertifikasi.edit', [
             'penawaran_sertifikasi' => $penawaran_sertifikasi,
-            'jenis_sertifikasi' => $jenis_sertifikasi,
+            'id_ref_jenis_sertifikasi' => $id_ref_jenis_sertifikasi,
             'kegiatan' => $kegiatan
         ]);
     }
@@ -104,12 +106,14 @@ class PenawaranSertifikasiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'id_ref_jenis_sertifikasi'=>'required',
             'deskripsi_penawaran' => 'required',
             'periode' => 'required',
         ]);
 
         $penawaran_sertifikasi = PenawaranSertifikasi::find($id);
         $penawaran_sertifikasi->deskripsi_penawaran = $request->input('deskripsi_penawaran');
+        $penawaran_sertifikasi->id_ref_jenis_sertifikasi = $request->input('id_ref_jenis_sertifikasi');
         $penawaran_sertifikasi->periode = $request->input('periode');
         $penawaran_sertifikasi->is_active = true;
 

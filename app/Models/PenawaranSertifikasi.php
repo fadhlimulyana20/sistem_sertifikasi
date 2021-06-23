@@ -16,4 +16,12 @@ class PenawaranSertifikasi extends Model
         'periode',
         'is_active'
     ];
+
+    public function jenisSertifikasi(){
+        return $this->belongsTo(RefJenisSertifikasi::class, 'id_ref_jenis_sertifikasi');
+    }
+
+    public function jadwal() {
+        return $this->hasMany(Jadwal::class, 'id_penawaran_sertifikasi');
+    }
 }

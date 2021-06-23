@@ -17,4 +17,8 @@ class Jadwal extends Model
         'is_show',
         'deskripsi'
     ];
+
+    public function kegiatan() {
+        return $this->belongsTo(RefKegiatan::class, 'id_kegiatan');
+    }
 }

@@ -15,7 +15,7 @@
                     @method('POST')
                     <div class="mb-3">
                         <label for="jenis_sertifikasi">Jenis Sertifikasi</label>
-                        <select class="form-control" id="jenis_sertifikasi" name="jenis_sertifikasi">
+                        <select class="form-control" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi">
                             <option selected>Open this select menu</option>
                             @foreach ($jenis_sertifikasi as $item)
                                 <option value="{{ $item->id }}">{{ $item->nama }}</option>

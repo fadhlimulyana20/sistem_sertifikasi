@@ -27,7 +27,7 @@
             <div class="card" style="width: 16rem;">
                 <a href="/penawaran/detail/{{$item->id}}"><img src="{{ asset('assets/img/card.png') }}" class="card-img-top" alt="produk4"></a>
                 <div class="card-body">
-                    <h6 class="card-title">Penawaran {{ $loop->iteration }}</h6>
+                    <h6 class="card-title">{{ $item->jenisSertifikasi->nama }}</h6>
                     <p>{{$item->deskripsi_penawaran}}</p>
                 </div>
             </div>

@@ -14,14 +14,14 @@
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
-                            <label for="jenis_sertifikasi">Jenis Sertifikasi</label>
-                            <select class="form-control" id="jenis_sertifikasi" name="jenis_sertifikasi">
+                            <label for="id_ref_jenis_sertifikasi">Jenis Sertifikasi</label>
+                            <select class="form-control" id="id_ref_jenis_sertifikasi" name="id_ref_jenis_sertifikasi">
                                 <option selected>Open this select menu</option>
-                                @foreach ($jenis_sertifikasi as $item)
+                                @foreach ($id_ref_jenis_sertifikasi as $item)
                                     @if ($item->id == $penawaran_sertifikasi->id_ref_jenis_sertifikasi)
                                         <option selected value="{{ $item->id }}">{{ $item->nama }}</option>
                                     @else
-                                        <option selected value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                     @endif
                                 @endforeach
                             </select>

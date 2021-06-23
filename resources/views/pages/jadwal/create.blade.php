@@ -27,7 +27,7 @@
                             <select class="form-control" id="penawaran_sertifikasi" name="penawaran_sertifikasi">
                                 <option selected>Open this select menu</option>
                                 @foreach ($penawaran_sertifikasi as $item)
-                                    <option value="{{ $item->id }}">{{ $item->id }}</option>
+                                    <option value="{{ $item->jenisSertifikasi->nama }}">{{ $item->jenisSertifikasi->nama }}</option>
                                 @endforeach
                             </select>
                         </div>
