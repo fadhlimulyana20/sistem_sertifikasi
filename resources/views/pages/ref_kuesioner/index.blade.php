@@ -29,9 +29,6 @@
                                 <td>{{ $item->pertanyaan }}</td>
                                 <td class="d-flex justify-content-start gap-2">
                                     <div>
-                                        <a class="btn btn-link" href="{{ route('ref_kuesioner.show', $item->id) }}">Lihat</a>
-                                    </div>
-                                    <div>
                                         <a class="btn btn-link" href="{{ route('ref_kuesioner.edit', $item->id) }}">Edit</a>
                                     </div>
                                     <div>
