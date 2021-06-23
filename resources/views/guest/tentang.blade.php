@@ -10,7 +10,7 @@
         <h1></h1>
         <div class="row featurette">
             <div class="col-md-3 offset-md-2">
-                <img class="featurette-image img-fluid mx-auto" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="220" height="220" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="{{ asset('assets/img/logo.png') }}" width="220" height="220" alt="Generic placeholder image">
             </div>
           <div class="col-md-6 offset-md-0 ml-auto">
             <h2 class="featurette-heading">Sistem Sertifikasi</h2>
@@ -22,7 +22,7 @@
     <hr class="featurette-divider">
 </div>
 <div class="container marketing">
-     <h1 style="text-align:center">team member</h1>
+     <h1 style="text-align:center; margin-bottom: 70px;">Team Member</h1>
     <div class="row">
         <div class="col-md-3 ml-auto">
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" >
