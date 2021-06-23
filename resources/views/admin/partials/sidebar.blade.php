@@ -13,6 +13,12 @@
         {{-- <li class="{{ strpos(Route::currentRouteName(), 'asesi') !== false ? 'active' : '' }}"><a class="nav-link"
                 href="{{ route('asesi.index') }}"><i class="fa fa-users"></i> <span>Asesi</span></a></li> --}}
 
+        <li class="{{ strpos(Route::currentRouteName(), 'adminIndex') !== false ? 'active' : '' }}">
+            <a href="{{ route('admin.adminIndex') }}" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+        </li>
         <li class="{{ strpos(Route::currentRouteName(), 'asesi') !== false ? 'active' : '' }}">
             <a href="{{ route('asesi.index') }}" class="nav-link">
                 <i class="fas fa-user-graduate"></i>
@@ -51,21 +57,21 @@
         </li>
 
         <li class="{{ strpos(Route::currentRouteName(), 'ref_jenis_sertifikasi') !== false ? 'active' : '' }}">
-            <a href="{{route('ref_jenis_sertifikasi.index')}}" class="nav-link">
+            <a href="{{ route('ref_jenis_sertifikasi.index') }}" class="nav-link">
                 <i class="fas fa-book"></i>
                 <span>Ref Jenis Sertifikasi</span>
             </a>
         </li>
 
         <li class="{{ strpos(Route::currentRouteName(), 'ref_kuesioner') !== false ? 'active' : '' }}">
-            <a href="{{route('ref_kuesioner.index')}}" class="nav-link">
+            <a href="{{ route('ref_kuesioner.index') }}" class="nav-link">
                 <i class="fas fa-question-circle"></i>
                 <span>Ref Kuesioner</span>
             </a>
         </li>
 
         <li class="{{ strpos(Route::currentRouteName(), 'ref_unit_kompetensi') !== false ? 'active' : '' }}">
-            <a href="{{route('ref_unit_kompetensi.index')}}" class="nav-link">
+            <a href="{{ route('ref_unit_kompetensi.index') }}" class="nav-link">
                 <i class="fas fa-question"></i>
                 <span>Unit Kompetensi</span>
             </a>

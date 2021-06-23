@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AsesiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\PenawaranSertifikasiController;
@@ -36,6 +37,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'adminIndex'])->name('adminIndex');
+});
 
 Route::prefix('pendaftar')->name('pendaftar.')->group(function () {
     Route::get('/', [PendaftarController::class, 'index'])->name('index');
