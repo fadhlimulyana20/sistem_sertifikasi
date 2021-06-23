@@ -20,7 +20,15 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
+                                    <th scope="col">NIM</th>
+                                    <th scope="col">NIK</th>
+                                    <th scope="col">Tempat Lahir</th>
+                                    <th scope="col">Tanggal Lahir</th>
+                                    <th scope="col">Jenis Kelamin</th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col">No Telepon</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">Kualifikasi Pendidikan</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -29,12 +37,16 @@
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $item->user->name }}</td>
+                                        <td>{{ $item->nim }}</td>
+                                        <td>{{ $item->user->nik }}</td>
+                                        <td>{{ $item->tempat_lahir }}</td>
+                                        <td>{{ $item->tanggal_lahir }}</td>
+                                        <td>{{ $item->jenis_kelamin }}</td>
+                                        <td>{{ $item->alamat }}</td>
+                                        <td>{{ $item->no_telepon }}</td>
                                         <td>{{ $item->user->email }}</td>
+                                        <td>{{ $item->kualifikasi_pendidikan }}</td>
                                         <td class="d-flex justify-content-start gap-2">
-                                            <div>
-                                                <a class="btn btn-link"
-                                                    href="{{ route('jadwal.show', $item->id) }}">Lihat</a>
-                                            </div>
                                             <div>
                                                 <a class="btn btn-link"
                                                     href="{{ route('asesi.edit', $item->id) }}">Edit</a>
