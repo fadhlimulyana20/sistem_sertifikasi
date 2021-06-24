@@ -38,7 +38,7 @@
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $item->user->name }}</td>
                                         <td>{{ $item->nim }}</td>
-                                        <td>{{ $item->user->nik }}</td>
+                                        <td>{{ $item->nik }}</td>
                                         <td>{{ $item->tempat_lahir }}</td>
                                         <td>{{ $item->tanggal_lahir }}</td>
                                         <td>{{ $item->jenis_kelamin }}</td>

@@ -16,6 +16,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Jenis Sertifikasi</th>
                                     <th scope="col">Periode</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
@@ -24,11 +25,9 @@
                                 @foreach ($penawaran_sertifikasi as $item)
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
+                                        <td>{{ $item->jenisSertifikasi->nama}}</td>
                                         <td>{{ $item->periode }}</td>
                                         <td class="d-flex justify-content-start gap-2">
-                                            <div>
-                                                <a class="btn btn-link" href="{{ route('penawaran_sertifikasi.show', $item->id) }}">Lihat</a>
-                                            </div>
                                             <div>
                                                 <a class="btn btn-link" href="{{ route('penawaran_sertifikasi.edit', $item->id) }}">Edit</a>
                                             </div>

@@ -22,9 +22,10 @@ class RefJenisSertifikasi extends Model
         return $this->hasMany(UnitKompetensiSertifikasi::class, 'id_ref_jenis_sertifikasi', 'id');
     }
 
-    // public function syarat(){
-    //     return $this->hasMany(SyaratSertifikasi::class, 'id_ref_jenis_sertifikasi');
-    // }
+    public function syarat(){
+        return $this->hasMany(SyaratSertifikasi::class, 'id_ref_jenis_sertifikasi');
+    }
+
     // public function asesorJenisSertifikai(){
     //     return $this->hasMany(AsesorJenisSertifikai::class);
     // }

@@ -24,7 +24,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <input class="form-control" type="text" name="syarat" id="syarat" 
+                    <input class="form-control" type="text" name="syarat" id="syarat"
                     placeholder="syarat sertifikasi" required>
                 </div>
                 <div class="form-check mb-3">

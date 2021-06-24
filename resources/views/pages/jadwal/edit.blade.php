@@ -15,27 +15,27 @@
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
-                            <label for="kegiatan">Kegiatan</label>
-                            <select class="form-control" id="kegiatan" name="kegiatan">
+                            <label for="id_kegiatan">Kegiatan</label>
+                            <select class="form-control" id="id_kegiatan" name="id_kegiatan">
                                 <option selected>Open this select menu</option>
                                 @foreach ($kegiatan as $item)
                                     @if ($item->id == $jadwal->id_kegiatan)
                                         <option selected value="{{ $item->id }}">{{ $item->nama_kegiatan }}</option>
                                     @else
-                                        <option selected value="{{ $item->id }}">{{ $item->nama_kegiatan }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->nama_kegiatan }}</option>
                                     @endif
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="penawaran_sertifikasi">Penawaran Sertifikasi</label>
-                            <select class="form-control" id="penawaran_sertifikasi" name="penawaran_sertifikasi">
+                            <label for="id_penawaran_sertifikasi">Penawaran Sertifikasi</label>
+                            <select class="form-control" id="id_penawaran_sertifikasi" name="id_penawaran_sertifikasi">
                                 <option selected>Open this select menu</option>
                                 @foreach ($penawaran_sertifikasi as $item)
                                     @if ($item->id == $jadwal->id_penawaran_sertifikasi)
-                                        <option selected value="{{ $item->id }}">{{ $item->id }}</option>
+                                        <option selected value="{{ $item->id }}">{{ $item->jenisSertifikasi->nama }}</option>
                                     @else
-                                        <option selected value="{{ $item->id }}">{{ $item->id }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->jenisSertifikasi->nama }}</option>
                                     @endif
                                 @endforeach
                             </select>
