@@ -30,9 +30,6 @@
                                         <td>{{ $item->nama }}</td>
                                         <td class="d-flex justify-content-start gap-2">
                                             <div>
-                                                <a class="btn btn-link" href="{{ route('ref_unit_kompetensi.show', $item->id) }}">Lihat</a>
-                                            </div>
-                                            <div>
                                                 <a class="btn btn-link" href="{{ route('ref_unit_kompetensi.edit', $item->id) }}">Edit</a>
                                             </div>
                                             <div>

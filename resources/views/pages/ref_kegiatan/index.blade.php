@@ -20,6 +20,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nama Kegiatan</th>
+                                    <th scope="col">Deskripsi</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -28,10 +29,8 @@
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>{{ $item->nama_kegiatan }}</td>
+                                        <td>{{ $item->deskripsi }}</td>
                                         <td class="d-flex justify-content-start gap-2">
-                                            <div>
-                                                <a class="btn btn-link" href="{{ route('ref_kegiatan.show', $item->id) }}">Lihat</a>
-                                            </div>
                                             <div>
                                                 <a class="btn btn-link" href="{{ route('ref_kegiatan.edit', $item->id) }}">Edit</a>
                                             </div>
