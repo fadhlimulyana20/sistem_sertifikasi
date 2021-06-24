@@ -16,6 +16,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Nama Kegiatan</th>
                                     <th scope="col">Tanggal Awal</th>
                                     <th scope="col">Tanggal Akhir</th>
                                     <th scope="col">Aksi</th>
@@ -25,12 +26,10 @@
                                 @foreach ($jadwal as $item)
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
+                                        <td>{{ $item->kegiatan->nama_kegiatan }}</td>
                                         <td>{{ $item->tanggal_awal }}</td>
                                         <td>{{ $item->tanggal_akhir }}</td>
                                         <td class="d-flex justify-content-start gap-2">
-                                            <div>
-                                                <a class="btn btn-link" href="{{ route('jadwal.show', $item->id) }}">Lihat</a>
-                                            </div>
                                             <div>
                                                 <a class="btn btn-link" href="{{ route('jadwal.edit', $item->id) }}">Edit</a>
                                             </div>

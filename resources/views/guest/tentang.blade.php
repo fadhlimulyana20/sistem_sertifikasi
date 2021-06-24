@@ -10,7 +10,7 @@
         <h1></h1>
         <div class="row featurette">
             <div class="col-md-3 offset-md-2">
-                <img class="featurette-image img-fluid mx-auto" src="{{ asset('assets/img/logo.png') }}" width="220" height="220" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="{{ asset('assets/img/logo1.png') }}" width="220" height="220" alt="Generic placeholder image">
             </div>
           <div class="col-md-6 offset-md-0 ml-auto">
             <h2 class="featurette-heading">Sistem Sertifikasi</h2>

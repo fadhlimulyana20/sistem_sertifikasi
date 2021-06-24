@@ -38,8 +38,9 @@
         <div class="right_content">
         <p>Jadwal Kegiatan</p>
         <ul>
-            <li><b>Pendaftaran</b><br>9 Juni 2021 - 20 Juni 2021</li>
-            <li><b>Ujian</b><br>9 Juni 2021 - 20 Juni 2021</li>
+            @foreach ($penawaran_sertifikasi->jadwal as $item)
+                <li><b>{{ $item->kegiatan->nama_kegiatan }}</b><br>{{ $item->tanggal_awal }} - {{ $item->tanggal_akhir }}</li>
+            @endforeach
         </ul>
         <input type="submit" name="daftar" value="Daftar" id="daftar" >
         </div>
