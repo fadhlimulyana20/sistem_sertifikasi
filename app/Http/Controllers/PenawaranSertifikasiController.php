@@ -29,8 +29,7 @@ class PenawaranSertifikasiController extends Controller
      */
     public function create()
     {
-        $jenis_sertifikasi = DB::table('ref_jenis_sertifikasi')->join('penawaran_sertifikasi', 'ref_jenis_sertifikasi.id', '=', 'penawaran_sertifikasi.id_ref_jenis_sertifikasi')
-            ->select('ref_jenis_sertifikasi.*')->get();
+        $jenis_sertifikasi = RefJenisSertifikasi::all();
         return view ('pages.penawaran_sertifikasi.create', [
             'jenis_sertifikasi' => $jenis_sertifikasi
         ]);
