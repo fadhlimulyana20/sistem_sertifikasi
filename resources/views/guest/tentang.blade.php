@@ -40,7 +40,7 @@
         </div>
 
         <div class="col-md-3 ml-auto">
-            <img class="rounded-circle" src="{{ asset('assets/img/miko.jpg') }}" alt="Generic placeholder image" width="140" height="140" >
+            <img class="rounded-circle" src="{{ asset('assets/img/indah.jpg') }}" alt="Generic placeholder image" width="140" height="140" >
             <p class="title" style="text-align: center;">Indah Paksi Larasati</p>
         </div>
 
@@ -49,7 +49,7 @@
             <p class="title" style="text-align: center;">Irfan Rafi Rizaldi</p>
         </div>
         <div class="col-md-3 ml-auto">
-            <img class="rounded-circle" src="{{ asset('assets/img/miko.jpg') }}" alt="Generic placeholder image" width="140" height="140" >
+            <img class="rounded-circle" src="{{ asset('assets/img/joy.jpg') }}" alt="Generic placeholder image" width="140" height="140" >
             <p class="title" style="text-align: center;">Joy Kristian Eldo</p>
         </div>
         <div class="col-md-3 ml-auto">

@@ -49,13 +49,17 @@ class JadwalController extends Controller
         $request->validate([
             'tanggal_awal' => 'required',
             'tanggal_akhir' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'id_penawaran_sertifikasi' => 'required',
+            'id_kegiatan' => 'required',
         ]);
 
         $jadwal = new Jadwal;
         $jadwal->tanggal_awal = $request->input('tanggal_awal');
         $jadwal->tanggal_akhir = $request->input('tanggal_akhir');
         $jadwal->deskripsi = $request->input('deskripsi');
+        $jadwal->id_penawaran_sertifikasi= $request->input('id_penawaran_sertifikasi');
+        $jadwal->id_kegiatan = $request->input('id_kegiatan');
         $jadwal->is_show = true;
 
         $jadwal->save();
@@ -108,13 +112,17 @@ class JadwalController extends Controller
         $request->validate([
             'tanggal_awal' => 'required',
             'tanggal_akhir' => 'required',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'id_penawaran_sertifikasi' => 'required',
+            'id_kegiatan' => 'required',
         ]);
 
         $jadwal = Jadwal::find($id);
         $jadwal->tanggal_awal = $request->input('tanggal_awal');
         $jadwal->tanggal_akhir = $request->input('tanggal_akhir');
         $jadwal->deskripsi = $request->input('deskripsi');
+        $jadwal->id_penawaran_sertifikasi= $request->input('id_penawaran_sertifikasi');
+        $jadwal->id_kegiatan = $request->input('id_kegiatan');
         $jadwal->is_show = true;
 
         $jadwal->save();
