@@ -39,7 +39,7 @@
         <p>Jadwal Kegiatan</p>
         <ul>
             @foreach ($penawaran_sertifikasi->jadwal as $item)
-                <li><b>{{ $item->kegiatan->nama_kegiatan }}</b><br>{{ $item->tanggal_awal }} - {{ $item->tanggal_akhir }}</li>
+                <li><b>{{ $item->kegiatan->nama_kegiatan }}</b><br>{{ \Carbon\Carbon::parse($item->tanggal_awal)->toFormattedDateString() }} - {{ \Carbon\Carbon::parse($item->tanggal_akhir)->toFormattedDateString()  }}</li>
             @endforeach
         </ul>
         <input type="submit" name="daftar" value="Daftar" id="daftar" >
