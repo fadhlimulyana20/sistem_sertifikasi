@@ -14,4 +14,14 @@ class Asesor extends Model
     protected $fillable = [
         'nama'
     ];
+
+    public function asesorJenisSertifikasi()
+    {
+        return $this->hasMany(AsesorJenisSertifikasi::class, 'id_asesor');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }
