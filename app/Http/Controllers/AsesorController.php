@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asesor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AsesorController extends Controller
@@ -28,7 +29,10 @@ class AsesorController extends Controller
      */
     public function create()
     {
-        return view('pages.asesor.create');
+        $user = User::all();
+        return view('pages.asesor.create', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -44,6 +48,7 @@ class AsesorController extends Controller
         ]);
 
         $asesor = new Asesor;
+        $asesor->id_user = $request->input('id_user');
         $asesor->nama = $request->input('nama');
 
         $asesor->save();
@@ -75,8 +80,10 @@ class AsesorController extends Controller
     public function edit($id)
     {
         $asesor = Asesor::find($id);
+        $user = User::all();
         return view('pages.asesor.edit', [
-            'asesor' => $asesor
+            'asesor' => $asesor,
+            'user' => $user
         ]);
     }
 
@@ -94,6 +101,7 @@ class AsesorController extends Controller
         ]);
 
         $asesor = Asesor::find($id);
+        $asesor->id_user = $request->input('id_user');
         $asesor->nama = $request->input('nama');
 
         $asesor->save();
