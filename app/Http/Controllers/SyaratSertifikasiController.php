@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RefJenisSertifikasi;
 use App\Models\SyaratSertifikasi;
 
 class SyaratSertifikasiController extends Controller
@@ -28,12 +29,12 @@ class SyaratSertifikasiController extends Controller
      */
     public function create()
     {
-        $ref_jenis_sertifikasi = SyaratSertifikasi::all();
+        $ref_jenis_sertifikasi = RefJenisSertifikasi::all();
 
         return view('pages.syarat_sertifikasi.create',[
             'ref_jenis_sertifikasi' => $ref_jenis_sertifikasi
         ]);
-        
+
     }
 
     /**
@@ -67,7 +68,7 @@ class SyaratSertifikasiController extends Controller
      */
     public function show($id)
     {
-    
+
     }
 
     /**
@@ -98,9 +99,12 @@ class SyaratSertifikasiController extends Controller
     {
         $request->validate([
             'syarat' => 'required',
+            'ref_jenis_sertifikasi' => 'required',
         ]);
 
         $syarat_sertifikasi = SyaratSertifikasi :: find($id);
+
+        $syarat_sertifikasi = new SyaratSertifikasi;
         $syarat_sertifikasi->syarat = $request->input('syarat');
         $syarat_sertifikasi->is_aktif= true;
         $syarat_sertifikasi-> id_ref_jenis_sertifikasi = $request -> input('ref_jenis_sertifikasi');
@@ -119,7 +123,7 @@ class SyaratSertifikasiController extends Controller
     public function destroy($id)
     {
         $syarat_sertifikasi = SyaratSertifikasi :: find($id);
-        
+
         $syarat_sertifikasi->delete();
 
         return redirect(route('syarat_sertifikasi.index'));

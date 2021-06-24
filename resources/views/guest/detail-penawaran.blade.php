@@ -8,23 +8,19 @@
     <div class="detail-penawaran">
     <div class="left">
     <div class="section-header">
-        <h1>Nama Sertifikasi</h1>
+        <h1>{{ $penawaran_sertifikasi->jenisSertifikasi->nama }}</h1>
     </div>
     <div class="desc-penawaran">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Temporibus, doloremque! Natus vitae, ipsum, porro doloremque
-            provident molestias accusamus, repellendus nemo ut
-            exercitationem maxime repellat sit quibusdam quam aspernatur
-            fugiat iusto.
+            {{ $penawaran_sertifikasi->deskripsi_penawaran }}
         </p>
     </div>
     <div class="syarat">
         <h4>Syarat</h4>
         <ol>
-            <li>Syarat syarat syarat syarat syarat styarataaa</li>
-            <li>Syarat syarat syarat syarat syarat styarataaa</li>
-            <li>Syarat syarat syarat syarat syarat styarataaa</li>
+            @foreach ($penawaran_sertifikasi->jenisSertifikasi->syarat as $item)
+                <li>{{ $item->syarat }}</li>
+            @endforeach
         </ol>
     </div>
 
