@@ -12,13 +12,14 @@ class PenawaranSertifikasi extends Model
     protected $table = "penawaran_sertifikasi";
 
     protected $fillable = [
+        'id_ref_jenis_sertifikasi',
         'deskripsi_penawaran',
         'periode',
         'is_active'
     ];
 
     public function jenisSertifikasi(){
-        return $this->belongsTo(RefJenisSertifikasi::class, 'id_ref_jenis_sertifikasi');
+        return $this->belongsTo(RefJenisSertifikasi::class, 'id_ref_jenis_sertifikasi', 'id');
     }
 
     public function jadwal() {
